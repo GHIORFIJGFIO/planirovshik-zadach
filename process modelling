@@ -1,0 +1,64 @@
+from rich.console import Console
+from rich.table import Table
+
+console = Console()
+
+def display_dashboard():
+    table = Table(title="Главный экран (Dashboard)")
+
+    table.add_column("Элемент", justify="left", style="cyan", no_wrap=True)
+    table.add_column("Описание", justify="left", style="magenta")
+
+    table.add_row("Список задач", "С возможностью фильтрации по статусу (новая, в процессе, выполнена, отменена)")
+    table.add_row("Кнопка для добавления новой задачи", "Позволяет добавить новую задачу")
+    table.add_row("Рекомендации сервисов", "На основе задач пользователя")
+    table.add_row("Информация о кэшбэке", "Информация о начисляемом кэшбэке")
+
+    console.print(table)
+
+def display_add_task_screen():
+    table = Table(title="Экран добавления задачи")
+
+    table.add_column("Элемент", justify="left", style="cyan", no_wrap=True)
+    table.add_column("Описание", justify="left", style="magenta")
+
+    table.add_row("Поля для ввода", "Название задачи, описание, дата и время")
+    table.add_row("Опция прикрепления документа", "Например, билет")
+    table.add_row("Выпадающий список", "Выбор категории задачи (доставка продуктов, покупка билетов, заправка машины и т.д.)")
+    table.add_row("Кнопка 'Сохранить'", "Сохранение новой задачи")
+
+    console.print(table)
+
+def display_view_task_screen():
+    table = Table(title="Экран просмотра задачи")
+
+    table.add_column("Элемент", justify="left", style="cyan", no_wrap=True)
+    table.add_column("Описание", justify="left", style="magenta")
+
+    table.add_row("Название задачи", "Название задачи")
+    table.add_row("Описание задачи", "Описание задачи")
+    table.add_row("Дата и время выполнения", "Дата и время выполнения")
+    table.add_row("Прикрепленные документы", "Прикрепленные документы")
+    table.add_row("Статус задачи", "С возможностью изменения")
+    table.add_row("Кнопки для редактирования и удаления задачи", "Редактирование и удаление задачи")
+
+    console.print(table)
+
+def display_services_screen():
+    table = Table(title="Экран услуг")
+
+    table.add_column("Элемент", justify="left", style="cyan", no_wrap=True)
+    table.add_column("Описание", justify="left", style="magenta")
+
+    table.add_row("Список сервисов", "С кратким описанием и ценой")
+    table.add_row("Фильтры", "Поиск нужного сервиса")
+    table.add_row("Кнопка для заказа сервиса", "Заказ сервиса")
+    table.add_row("Информация о кэшбэке", "Информация о начисляемом кэшбэке")
+
+    console.print(table)
+
+# Display all screens
+display_dashboard()
+display_add_task_screen()
+display_view_task_screen()
+display_services_screen()
